@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vision & Mission</title>
+
+  <!-- Favicons -->
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+  <link rel="apple-touch-icon-precomposed" href="/assets/icons/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Meta -->
+  <meta name="description" content="This is the default English description for the site.">
+  <meta name="keywords" content="innovation, research, technology, Egypt, NRC">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Vision & Mission">
+  <meta property="og:description" content="This is the default English description for the site.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en">
+  <meta property="og:url" content="/en/about/vision-mission/">
+  <meta property="og:image" content="/assets/images/default-en.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vision & Mission">
+  <meta name="twitter:description" content="This is the default English description for the site.">
+  <meta name="twitter:image" content="/assets/images/default-en.jpg">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- HTMX & Alpine.js -->
+  <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+  <script src="https://unpkg.com/alpinejs@3.x.x" defer></script>
+
+  <style>
+    :root { --main-bg: #fff; }
+    .dark-mode { --main-bg: #1a1a1a; background: #000 !important; color: white; }
+    .dark-mode main { background: #1a1a1a; }
+    .dark-mode .box { background: #2a2a2a; }
+    main { background: var(--main-bg); transition: background 0.3s ease, color 0.3s ease; }
+
+    .menu { border-radius: 0.4rem; }
+    .box { border-radius: 0.4rem; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+    [dir="rtl"] main.column { order: 1; }
+    .gap-2 { gap: 0.5rem; }
+    .gap-3 { gap: 0.75rem; }
+
+    #installBtn, #updateBtn {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      z-index: 2000;
+    }
+    #updateBtn { bottom: 4rem; }
+  </style>
+</head>
+<body>
+  <div id="offlineNotice" class="notification is-danger" style="display:none; position:fixed; bottom:1rem; right:1rem; z-index:2000;">
+    ⚠️ You are offline. Some features may not work.
+  </div>
+
+  <div class="buttons is-centered">
+    <button id="installBtn" class="button is-primary" style="display:none;">📲 Install App</button>
+    <button id="updateBtn" class="button is-warning" style="display:none;">🔄 Update Available</button>
+  </div>
+
+  
+  <section class="has-background-dark py-2 px-4">
+    <div class="is-flex is-justify-content-space-between is-align-items-center is-flex-wrap-wrap">
+      <div class="is-flex gap-2">
+        
+            <a href="https://facebook.com" class="icon has-text-white" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        
+            <a href="https://twitter.com" class="icon has-text-white" title="Twitter"><i class="fab fa-twitter"></i></a>
+        
+            <a href="https://linkedin.com" class="icon has-text-white" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        
+            <a href="https://youtube.com" class="icon has-text-white" title="YouTube"><i class="fab fa-youtube"></i></a>
+        
+      </div>
+      
+      <div class="is-flex gap-3 is-align-items-center">
+        
+        
+            <a href="/ar/about/vision-mission/" 
+            lang="ar" class="button is-small is-white">
+            العربية
+            </a>
+        
+        
+        <div x-data="{ dark: false }">
+        <a @click="dark = !dark" class="icon has-text-white" title="Toggle Dark Mode">
+            <span x-text="dark ? '🌙' : '☀️'"></span>
+        </a>
+        </div>
+        <form class="field has-addons is-hidden-mobile">
+          <div class="control">
+            <input class="input is-small" type="text" placeholder="Search...">
+          </div>
+          <div class="control">
+            <button class="button is-small is-info" type="submit">
+              <span class="icon"><i class="fas fa-search"></i></span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <style>
+  .logo {
+    max-height: 90px;
+    width: auto;
+    object-fit: contain;
+    vertical-align: middle;
+  }
+  /* .dark-mode .logo { filter: brightness(0) invert(1); } */
+
+
+    .company-intro {
+    padding: 1rem 1rem;
+    }
+
+    .company-intro .title {
+    color: #2c3e50; /* Dark elegant text */
+    }
+
+    .company-intro .subtitle {
+    margin-top: 0.5rem;
+    color: #6c757d; /* Softer grey text */
+    }
+
+    .company-intro .divider {
+    width: 70px;
+    height: 3px;
+    background: #3273dc; /* Bulma primary */
+    margin: 1rem auto 0;
+    border-radius: 3px;
+    }
+
+    /* Optional animation */
+    .company-intro {
+    opacity: 0;
+    transform: translateY(15px);
+    animation: fadeInUp 2s ease forwards;
+    }
+    @keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+
+    /* Pulse effect on title */
+    .focus-title {
+    animation: pulse 2.5s infinite;
+    }
+
+    @keyframes pulse {
+    0%, 100% {
+        color: #2c3e50;
+        text-shadow: none;
+    }
+    50% {
+        color: #1d4ed8; /* Bulma primary shade */
+        text-shadow: 0 0 8px rgba(50, 115, 220, 0.6);
+    }
+    }
+
+    /* Apply some animations */
+    .logo {
+    max-height: 90px;
+    width: auto;
+    object-fit: contain;
+    vertical-align: middle;
+
+    /* Continuous subtle animation */
+    animation: floatPulse 5s ease-in-out infinite;
+    transition: transform 0.6s ease;
+    }
+
+    /* Combined floating + pulsing */
+    @keyframes floatPulse {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-8px) scale(1.05);
+    }
+    }
+
+    /* Hover spin (interactive) */
+    .logo:hover {
+    transform: rotate(5deg) scale(1.1);
+    }
+
+    /* Divider shimmer effect */
+    .divider {
+    width: 70px;
+    height: 3px;
+    background: linear-gradient(90deg, #3273dc, #6ea8fe, #3273dc);
+    background-size: 200% 100%;
+    margin: 1rem auto 0;
+    border-radius: 3px;
+    }
+
+    .shimmer {
+    animation: shimmer 3s linear infinite;
+    }
+
+    @keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+    }
+
+</style>
+
+  <section class="middlebar p-3">
+    <div class="columns is-vcentered is-mobile is-variable is-1">
+      <div class="column has-text-centered">
+        <div class="is-flex is-align-items-center is-justify-content-start">
+          <img src="/assets/img/logo_cnrc.png" alt="CNRC Logo" class="logo" loading="lazy">
+        </div>
+      </div>
+
+      <div class="column has-text-centered company-intro">
+        <h1 class="title is-3 has-text-weight-bold focus-title">
+          Company of National Research Centre
+        </h1>
+        <p class="subtitle is-5 has-text-grey">
+          For Innovative Products
+        </p>
+        <div class="divider shimmer"></div>
+      </div>
+
+
+
+      <div class="column has-text-centered is-hidden-mobile">
+        <div class="is-flex is-align-items-center is-justify-content-end gap-2">
+            
+            <img src="/assets/img/logo_nrc.jpg" alt="NRC Logo" class="logo is-inline-block" loading="lazy">
+            
+            <img src="/assets/img/logo_inv.jpg" alt="Investment Logo" class="logo is-inline-block" loading="lazy">
+            
+         </div>
+      </div>
+    </div>
+  </section>
+  <style>
+<style>
+    .navbar { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+
+    /* Hide navbar menu by default */
+    .navbar-menu {
+      display: none;
+    }
+    .navbar-menu.is-active {
+      display: block;
+    }
+
+    /* Desktop: wrap items if needed */
+    @media screen and (min-width: 1024px) {
+      .navbar-menu {
+        display: flex; /* Removed !important */
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+      }
+      .navbar-start {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        width: 100%;
+      }
+      .navbar-item,
+      .navbar-link {
+        white-space: normal;
+      }
+      
+      /* Hide dropdowns by default on desktop */
+      .navbar-dropdown {
+        display: none;
+        position: absolute;
+        background: white;
+        z-index: 1000;
+      }
+      
+      /* Show dropdowns on hover for desktop */
+      .navbar-item.has-dropdown:hover .navbar-dropdown {
+        display: block;
+      }
+    }
+
+/* Mobile: stacked vertical layout */
+@media screen and (max-width: 1023px) {
+  .navbar-menu {
+    display: none; /* hidden by default */
+  }
+  .navbar-menu.is-active {
+    display: block; /* show only when active */
+  }
+  .navbar-start {
+    display: block;
+  }
+  .navbar-item {
+    display: block;
+    width: 100%;
+  }
+  .navbar-dropdown {
+    display: none;
+    padding-left: 1rem;
+  }
+  .navbar-item.has-dropdown.is-active .navbar-dropdown {
+    display: block;
+  }
+}
+</style>
+
+<nav class="navbar is-dark px-4" role="navigation" aria-label="main navigation"
+     x-data="{ navOpen: false, openDropdown: null }">
+
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger"
+       @click="navOpen = !navOpen"
+       :class="{ 'is-active': navOpen }"
+       aria-label="menu"
+       aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div class="navbar-menu" :class="{ 'is-active': navOpen }">
+    <div class="navbar-start">
+      
+        
+          <!-- Single link -->
+          <a class="navbar-item" href="/">Home</a>
+        
+      
+        
+          <!-- Dropdown -->
+          <div class="navbar-item has-dropdown" 
+               :class="{ 'is-active': openDropdown === '2' }">
+            <a class="navbar-link"
+               @click.prevent="openDropdown = (openDropdown === '2' ? null : '2')">
+              About Us
+            </a>
+            <div class="navbar-dropdown">
+              
+                <a class="navbar-item" href="/en/about/who-we-are">Who We Are</a>
+              
+                <a class="navbar-item" href="/en/about/vision-mission">Vision & Mission</a>
+              
+                <a class="navbar-item" href="/en/about/objectives">Objectives</a>
+              
+                <a class="navbar-item" href="/en/about/legal-framework">Legal Framework</a>
+              
+            </div>
+          </div>
+        
+      
+        
+          <!-- Dropdown -->
+          <div class="navbar-item has-dropdown" 
+               :class="{ 'is-active': openDropdown === '3' }">
+            <a class="navbar-link"
+               @click.prevent="openDropdown = (openDropdown === '3' ? null : '3')">
+              Innovation Ecosystem
+            </a>
+            <div class="navbar-dropdown">
+              
+                <a class="navbar-item" href="/en/ecosystem/resources">NRC Resources</a>
+              
+                <a class="navbar-item" href="/en/ecosystem/offices">Support Offices (OTC, PO, TOP, etc.)</a>
+              
+                <a class="navbar-item" href="/en/ecosystem/labs">Centres of Excellence & Labs</a>
+              
+                <a class="navbar-item" href="/en/ecosystem/club">Entrepreneurship Club</a>
+              
+            </div>
+          </div>
+        
+      
+        
+          <!-- Dropdown -->
+          <div class="navbar-item has-dropdown" 
+               :class="{ 'is-active': openDropdown === '4' }">
+            <a class="navbar-link"
+               @click.prevent="openDropdown = (openDropdown === '4' ? null : '4')">
+              Products & Services
+            </a>
+            <div class="navbar-dropdown">
+              
+                <a class="navbar-item" href="/en/products/commercialized">Commercialized Products</a>
+              
+                <a class="navbar-item" href="/en/products/pipeline">Pipeline Products</a>
+              
+                <a class="navbar-item" href="/en/products/rnd">R&D & Consultancy</a>
+              
+                <a class="navbar-item" href="/en/products/training">Training & Capacity Building</a>
+              
+            </div>
+          </div>
+        
+      
+        
+          <!-- Dropdown -->
+          <div class="navbar-item has-dropdown" 
+               :class="{ 'is-active': openDropdown === '5' }">
+            <a class="navbar-link"
+               @click.prevent="openDropdown = (openDropdown === '5' ? null : '5')">
+              Technology Incubators
+            </a>
+            <div class="navbar-dropdown">
+              
+                <a class="navbar-item" href="/en/incubators/health">Health & Pharmaceutical Products</a>
+              
+                <a class="navbar-item" href="/en/incubators/manufacturing">Local Manufacturing Deepening</a>
+              
+                <a class="navbar-item" href="/en/incubators/spin-off">Spin-off Model</a>
+              
+            </div>
+          </div>
+        
+      
+        
+          <!-- Dropdown -->
+          <div class="navbar-item has-dropdown" 
+               :class="{ 'is-active': openDropdown === '6' }">
+            <a class="navbar-link"
+               @click.prevent="openDropdown = (openDropdown === '6' ? null : '6')">
+              Patents & Publications
+            </a>
+            <div class="navbar-dropdown">
+              
+                <a class="navbar-item" href="/en/patents/list">Patents (280+)</a>
+              
+                <a class="navbar-item" href="/en/patents/publications">Publications (90,000+)</a>
+              
+                <a class="navbar-item" href="/en/patents/application">Commercialization Application Form</a>
+              
+                <a class="navbar-item" href="/en/patents/trl">TRL (Technology Readiness Levels)</a>
+              
+            </div>
+          </div>
+        
+      
+        
+          <!-- Dropdown -->
+          <div class="navbar-item has-dropdown" 
+               :class="{ 'is-active': openDropdown === '7' }">
+            <a class="navbar-link"
+               @click.prevent="openDropdown = (openDropdown === '7' ? null : '7')">
+              Partnerships & Projects
+            </a>
+            <div class="navbar-dropdown">
+              
+                <a class="navbar-item" href="/en/partnerships/contracts">Key Contracts & Success Stories</a>
+              
+                <a class="navbar-item" href="/en/partnerships/consultancy">Industrial & Environmental Consultancy</a>
+              
+                <a class="navbar-item" href="/en/partnerships/collaborations">Business Collaborations</a>
+              
+            </div>
+          </div>
+        
+      
+        
+          <!-- Dropdown -->
+          <div class="navbar-item has-dropdown" 
+               :class="{ 'is-active': openDropdown === '8' }">
+            <a class="navbar-link"
+               @click.prevent="openDropdown = (openDropdown === '8' ? null : '8')">
+              News & Events
+            </a>
+            <div class="navbar-dropdown">
+              
+                <a class="navbar-item" href="/en/news/announcements">Announcements</a>
+              
+                <a class="navbar-item" href="/en/news/exhibitions">Exhibitions & Conferences</a>
+              
+                <a class="navbar-item" href="/en/news/updates">Company Updates</a>
+              
+            </div>
+          </div>
+        
+      
+        
+          <!-- Dropdown -->
+          <div class="navbar-item has-dropdown" 
+               :class="{ 'is-active': openDropdown === '9' }">
+            <a class="navbar-link"
+               @click.prevent="openDropdown = (openDropdown === '9' ? null : '9')">
+              Governance
+            </a>
+            <div class="navbar-dropdown">
+              
+                <a class="navbar-item" href="/en/governance/board">Board of Directors</a>
+              
+                <a class="navbar-item" href="/en/governance/administration">Administrative Structure</a>
+              
+                <a class="navbar-item" href="/en/governance/spinoff">Spin-off Policy</a>
+              
+            </div>
+          </div>
+        
+      
+        
+          <!-- Dropdown -->
+          <div class="navbar-item has-dropdown" 
+               :class="{ 'is-active': openDropdown === '10' }">
+            <a class="navbar-link"
+               @click.prevent="openDropdown = (openDropdown === '10' ? null : '10')">
+              Contact Us
+            </a>
+            <div class="navbar-dropdown">
+              
+                <a class="navbar-item" href="/en/contact/address">Address</a>
+              
+                <a class="navbar-item" href="/en/contact/phone-email">Phone & Email</a>
+              
+                <a class="navbar-item" href="/en/contact/form">Contact Form</a>
+              
+                <a class="navbar-item" href="/en/contact/social">Social Media</a>
+              
+            </div>
+          </div>
+        
+      
+    </div>
+  </div>
+</nav>
+  <style>
+/* Floating Buttons */
+    /* Floating Actions */
+    .floating-buttons {
+      position: fixed;
+      top: 50%;
+      z-index: 50;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    /* LTR Position & Layout */
+    [dir="ltr"] .floating-buttons {
+      left: 0;
+    }
+    [dir="ltr"] .action-btn {
+      border-radius: 0 25px 25px 0;
+      justify-content: flex-start;
+      text-align: left;
+      direction: ltr;
+      transform-origin: left;
+    }
+
+    /* RTL Position & Layout */
+    [dir="rtl"] .floating-buttons {
+      right: 0;
+      left: auto;
+    }
+    [dir="rtl"] .action-btn {
+      border-radius: 25px 0 0 25px;
+      justify-content: flex-start;
+      text-align: right;
+      direction: rtl;
+      transform-origin: right;
+    }
+
+    /* Shared styles */
+    .action-btn {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem;
+      width: 50px;
+      background: #e63946;
+      color: white;
+      white-space: nowrap;
+      overflow: hidden;
+      transition: width 0.3s ease, background 0.3s ease;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .action-btn i {
+      font-size: 1.2rem;
+    }
+
+    /* LTR icon spacing */
+    [dir="ltr"] .action-btn i {
+      margin-right: 0.5rem;
+      margin-left: 0;
+    }
+
+    /* RTL icon spacing */
+    [dir="rtl"] .action-btn i {
+      margin-left: 0.5rem;
+      margin-right: 0;
+    }
+
+    .action-btn span {
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      font-size: 0.9rem;
+    }
+
+    /* Hover expands correctly */
+    .action-btn:hover {
+      width: 160px;
+    }
+    .action-btn:hover span {
+      opacity: 1;
+    }
+</style>
+
+<div class="floating-buttons">
+  
+    <a href="#" class="action-btn" style="background:#e63946;">
+      <i class="fas fa-lock"></i>
+      <span> Secure Login</span>
+    </a>
+  
+    <a href="#" class="action-btn" style="background:#f4a261;">
+      <i class="fas fa-envelope"></i>
+      <span> Contact</span>
+    </a>
+  
+    <a href="#" class="action-btn" style="background:#2a9d8f;">
+      <i class="fas fa-comment"></i>
+      <span> Feedback</span>
+    </a>
+  
+</div>
+
+
+  <main>
+    
+<div class="m-5">
+<style>
+/* Container for cards */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  align-items: stretch;
+}
+
+/* Individual card styling */
+.cards-container .card {
+  flex: 1 1 320px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+  padding: 2rem;
+  text-align: center;
+  direction: ltr;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cards-container .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Icon styling */
+.cards-container .card .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem auto;
+  border-radius: 50%;
+  background-color: #e6f9f7;
+  color: #00bfa6;
+}
+
+
+/* Title styling */
+.cards-container .card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #007b7f;
+}
+
+/* Text styling */
+.cards-container .card p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #444;
+  margin: 0;
+}
+
+/* Section heading */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #4a4aff;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+</style>
+
+<div class="container ps-5 pt-5">
+<h1 class="section-title">Vision & Mission</h1>
+
+<div class="cards-container">
+  
+    <div class="card">
+      <div class="icon">👁️</div>
+      <h3>Vision</h3>
+      <p>Empowering innovation: to be the bridge that connects innovators with local and global markets, enhancing the role of innovation in society, and driving the national economy forward.
+</p>
+    </div>
+  
+    <div class="card">
+      <div class="icon">🎯</div>
+      <h3>Mission</h3>
+      <p>Conducting fundamental and applied research in science and technology, transferring and commercializing research outputs and innovations, and enabling knowledge-based economic growth through sustainable solutions.
+</p>
+    </div>
+  
+</div>
+</div>
+
+
+
+<div class="buttom-links m-6">
+  <h3>Vision & Mission</h3>
+  <ul>
+    
+      
+    
+      
+        <li><a href="/en/about/who-we-are/">Who We Are</a></li>
+      
+    
+      
+    
+      
+        <li><a href="/en/about/vision-mission/">Vision & Mission</a></li>
+      
+    
+      
+    
+      
+        <li><a href="/en/about/objectives/">Objectives</a></li>
+      
+    
+      
+    
+      
+        <li><a href="/en/about/legal-framework/">Legal Framework</a></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </ul>
+</div>
+
+
+<style>
+.buttom-links {
+  background-color: #f8f9fb;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  direction: ltr;
+  font-family: "Cairo", sans-serif; /* use a modern Arabic-friendly font */
+}
+
+.buttom-links h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+}
+
+.buttom-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.buttom-links ul li {
+  margin-bottom: 0.75rem;
+}
+
+.buttom-links ul li a {
+  text-decoration: none;
+  color: #4a4aff;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.buttom-links ul li a:hover {
+  color: #1d1dd1;
+  text-decoration: underline;
+}
+</style>
+</div>
+
+  </main>
+
+  <style>
+.footer-logo {
+  max-height: 90px;
+  width: auto;
+  object-fit: contain;
+  vertical-align: middle;
+
+  /* Smooth continuous animation */
+  animation: floatPulse 5s ease-in-out infinite;
+  transition: transform 0.6s ease;
+}
+
+/* Combined float + pulse */
+@keyframes floatPulse {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.05);
+  }
+}
+
+/* Hover interaction */
+.footer-logo:hover {
+  transform: rotate(5deg) scale(1.1);
+}
+
+.footer-link {
+  color: #d1d5db;
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+.footer-link:hover {
+  color: #3273dc; /* Bulma primary */
+  transform: translateX(5px);
+}
+
+.footer-icon {
+  color: #d1d5db;
+  margin-right: 0.75rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+.footer-icon:hover {
+  color: #3273dc;
+  transform: scale(1.2);
+}
+
+/* foucse on developed by */
+.footer-credit span.has-text-success {
+  font-weight: bold;
+  position: relative;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* Soft glowing effect */
+@keyframes glowPulse {
+  0%, 100% {
+    color: #22c55e; /* Tailwind/Bulma success green */
+    text-shadow: 0 0 0px rgba(34, 197, 94, 0.6);
+  }
+  50% {
+    color: #16a34a;
+    text-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
+  }
+}
+
+</style>
+
+<footer class="footer has-background-dark has-text-light pt-6 pb-6">
+  <div class="container">
+    <div class="columns is-variable is-6">
+      
+      <!-- Logo & About -->
+      <div class="column is-4">
+        <figure class="image is-128x128 mb-3">
+          <img src="/assets/img/logo_cnrc.png" alt="Company Logo" class="footer-logo" loading="lazy">
+        </figure>
+        <p class="is-size-6">
+          
+            Company of National Research Centre<br>
+          
+            For Innovative Products<br>
+          
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="column is-4">
+        <h4 class="title is-6 has-text-white">Quick Links</h4>
+        <ul>
+          
+            <li><a href="/" class="footer-link">Home</a></li>
+          
+            <li><a href="/about" class="footer-link">About Us</a></li>
+          
+            <li><a href="/ecosystem" class="footer-link">Innovation Ecosystem</a></li>
+          
+            <li><a href="/patents/publications" class="footer-link">Publications</a></li>
+          
+            <li><a href="/news/exhibitions" class="footer-link">Gallery</a></li>
+          
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="column is-4">
+        <h4 class="title is-6 has-text-white">Contact Us</h4>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Research Ave, Cairo, Egypt</p>
+        <p><i class="fas fa-phone"></i> +20 123 456 789</p>
+        <p><i class="fas fa-envelope"></i> info@nrc-company.com</p>
+        <div class="mt-3">
+          
+            <a href="#" class="icon is-medium footer-icon"><i class="fab fa-facebook-f"></i></a>
+          
+            <a href="#" class="icon is-medium footer-icon"><i class="fab fa-twitter"></i></a>
+          
+            <a href="#" class="icon is-medium footer-icon"><i class="fab fa-linkedin-in"></i></a>
+          
+            <a href="#" class="icon is-medium footer-icon"><i class="fab fa-youtube"></i></a>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom strip -->
+    <div class="has-text-centered mt-5 footer-credit">
+      <p class="is-size-7">
+        © 2025 All rights reserved to Company of National Research Centre. Developed by
+        <a href="/"><span class="has-text-success">Dr. A. Abdelkader Aboamer</span></a>.
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+
+  <!-- PWA Logic -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let deferredPrompt;
+      const installBtn = document.getElementById("installBtn");
+      const updateBtn  = document.getElementById("updateBtn");
+      const offlineNotice = document.getElementById("offlineNotice");
+
+      // --- Helpers ---
+      function isIos() {
+        return /iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase());
+      }
+      function isHuawei() {
+        return /huawei|honor/.test(navigator.userAgent.toLowerCase());
+      }
+      function showIosInstallGuide() {
+        alert("📲 On iPhone/iPad, open Safari → tap Share → 'Add to Home Screen'.");
+      }
+      function showHuaweiGuide() {
+        alert("📲 On Huawei devices, open browser menu → 'Add to Home screen'.");
+      }
+      function isStandalone() {
+        return (
+          window.matchMedia('(display-mode: standalone)').matches ||
+          window.navigator.standalone === true
+        );
+      }
+      // --- Service Worker Registration ---
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/service-worker.js").then(reg => {
+          console.log("✅ SW registered:", reg);
+
+          reg.addEventListener("updatefound", () => {
+            const newWorker = reg.installing;
+            newWorker.addEventListener("statechange", () => {
+              if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
+                updateBtn.style.display = "inline-block";
+              }
+            });
+          });
+        }).catch(err => console.error("❌ SW registration failed:", err));
+      }
+
+      // --- Install prompt handling ---
+      if (isStandalone()) {
+        // Already installed → hide button
+        installBtn.style.display = "none";
+      } else {
+        // Not installed yet → listen for prompt
+        window.addEventListener("beforeinstallprompt", (e) => {
+          e.preventDefault();
+          deferredPrompt = e;
+
+          //if (isIos()) {
+          //  showIosInstallGuide();
+          //  return;
+          //}
+          //if (isHuawei()) {
+          //  showHuaweiGuide();
+          //  return;
+          //}
+
+          // Normal Android/Chrome
+          installBtn.style.display = "inline-block";
+        });
+      }
+
+      installBtn.addEventListener("click", async () => {
+        installBtn.style.display = "none";
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          const { outcome } = await deferredPrompt.userChoice;
+          console.log(`User choice: ${outcome}`);
+          deferredPrompt = null;
+        }
+      });
+
+      // --- Update Button ---
+      updateBtn.addEventListener("click", () => {
+        navigator.serviceWorker.getRegistration().then(reg => {
+          if (reg && reg.waiting) {
+            reg.waiting.postMessage({ action: "skipWaiting" });
+            reg.waiting.addEventListener("statechange", e => {
+              if (e.target.state === "activated") {
+                window.location.reload();
+              }
+            });
+          }
+        });
+      });
+
+      // --- Offline/Online Detection ---
+      async function checkOnlineStatus() {
+        try {
+          const resp = await fetch("/assets/icons/favicon.ico", { method: "HEAD", cache: "no-store" });
+          return resp.ok;
+        } catch {
+          return false;
+        }
+      }
+      function showOffline() {
+        offlineNotice.textContent = "⚠️ You are offline. Some features may not work.";
+        offlineNotice.className = "notification is-danger";
+        offlineNotice.style.display = "block";
+      }
+      function showOnline() {
+        offlineNotice.textContent = "✅ You are back online!";
+        offlineNotice.className = "notification is-success";
+        offlineNotice.style.display = "block";
+        setTimeout(() => { offlineNotice.style.display = "none"; }, 3000);
+      }
+
+      // Initial check
+      checkOnlineStatus().then(isOnline => { if (!isOnline) showOffline(); });
+
+      // Re-check every 15s
+      setInterval(async () => {
+        const online = await checkOnlineStatus();
+        if (!online) showOffline();
+      }, 15000);
+
+      window.addEventListener("offline", showOffline);
+      window.addEventListener("online", showOnline);
+    });
+  </script>
+
+</body>
+</html>
